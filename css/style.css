@@ -1,0 +1,381 @@
+/*fonts from google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root{
+    --main-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --text-color: #333333;
+    --color-white: #ffffff;
+    --success-color: #5cb85c;
+    --danger-color: #d9534f;
+}
+
+/*------------------------css reset-------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+body a{
+    color: var(--text-color);
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button,input{
+    outline: none;
+}
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+p{
+    margin: 10px 0;
+}
+img{
+    width: 100%;
+}
+code, pre{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+.hidden{
+    visibility: hidden;
+    height: 0;
+}
+
+
+/*---------------navbar section--------------*/
+
+.navbar{
+    background-color: var(--main-color);
+    color: var(--color-white);
+    height: 70px;
+    
+}
+.navbar .flex{
+    justify-content: space-between;
+}
+.navbar .navbar_row{
+    display: flex;
+}
+.navbar_row a{
+    color: var(--color-white);
+    padding: 10px;
+    margin: 0 5px;
+}
+.navbar_links:hover{
+    border-bottom: 2px solid var(--color-white);
+}
+
+/*-----------show case section----------*/
+.showcase_section{
+    height: 400px;
+    background-color: var(--main-color);
+    color: var(--color-white);
+    position: relative;
+}
+.showcase_section::before,
+.showcase_section::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    transform: skewY(-3deg);
+    background-color: var(--color-white);
+}
+.showcase_text{
+    animation: slideInFromLeft 1s ease-in;
+}
+.showcase_text h1{
+    font-size: 40px;
+}
+.showcase_text p{
+    margin: 20px 0;
+}
+.showcase_section .grid{
+    grid-template-columns: 53% 43%;
+    gap: 30px;
+    overflow: visible;
+}
+.showcase_form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 50px !important;
+    z-index: 100;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+}
+.showcase_form .form-control{
+    margin: 20px 0;
+}
+.form-control input{
+    border: none;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 10px 0;
+}
+.btn_outline{
+    background-color: transparent;
+    border: 1px solid var(--color-white) !important;
+}
+
+/*-------stats_section----------------------*/
+
+.stats_section{
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+.stats_heading{
+    max-width: 500px;
+    margin: auto;
+}
+.stats_section .grid h3{
+    font-size: 35px;
+
+}
+.stats_section .grid p{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+/*-------------install section-----------*/
+
+.install_section .grid{
+    grid-template-rows: repeat(2,1fr);
+}
+.install_section .grid > *:first-child{
+    grid-column: 1/ span 2;
+    grid-row: 1 / span 2;
+}
+
+
+/* -----------hosting section --------------*/
+
+.hosting_section{
+    background-color: var(--main-color);
+}
+.hosting_section .grid{
+    grid-template-columns: 4fr 3fr;
+}
+.content{
+    color: var(--color-white);
+}
+
+/*supoorted languages section*/
+
+.languages_section .flex{
+    flex-wrap: wrap;
+}
+.languages_section .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+.languages_section .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.languages_section .card:hover{
+    transform: translateY(-15px);
+}
+
+/*--------------Features sections------------------*/
+.hero_section img,
+.docs_section img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+/*sub head section css starts*/
+.subHead_section img{
+    width: 300px;
+    justify-self: flex-end;
+}
+
+/*------main section css--------*/
+.main_section .card i{
+    margin-right: 20px;
+}
+.main_section .grid{
+    padding: 30px;
+}
+.main_section .grid > *:first-child{
+    grid-column: 1 / span 3;
+}
+.main_section .grid > *:nth-child(2){
+    grid-column: 1 / span 2;
+}
+
+/*-------docs ----------*/
+.docsMain_section h3{
+    margin: 20px 0px;
+}
+.docsMain_section .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+.docsMain_section nav li{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.docsMain_section nav li a:hover{
+    font-weight: bold;
+
+}
+
+/*Animations -----------------*/
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+
+
+
+/*----------------footer---------------------*/
+footer .social_links a{
+    margin: 0 10px;
+}
+
+
+
+
+
+
+/*--------------media query : tablets and under----------*/
+@media(max-width:768px){
+/*--stack everything--- instead of column*/
+
+    .grid,
+    .showcase_section .grid,
+    .stats_section .grid,
+    .install_section .grid,
+    .hosting_section .grid,
+    .main_section .grid,
+    .docsMain_section .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .showcase_section{
+        height: auto;    /*fix up itself to the amount of the container*/
+    }
+    .showcase_text{
+        text-align: center;
+        margin-top: 40px;
+    }
+    .showcase_form{
+        justify-self: center;
+        margin: auto;
+        width: 100%;
+    }
+    .install_section .grid > *:first-child{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .install_section .card{
+        padding: 12px;
+        font-size: 13px;
+    }
+    .content{
+        margin-bottom: 10px;
+    }
+    .docs_section,
+    .subHead_section,
+    .hero_section{
+        text-align: center;
+    }
+    .docs_section img,
+    .subHead_section img,
+    .hero_section img {
+       justify-self: center;
+    }
+    .main_section .grid > *:first-child{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .main_section .grid > *:nth-child(2){
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+}
+
+/*--------------media query : mobile----------*/
+@media(max-width:500px){
+    .navbar{
+        height: 110px;
+    }
+    .navbar .flex{
+        flex-direction: column;
+    }
+    .navbar_row{
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+
+
+
+
+
+
+
